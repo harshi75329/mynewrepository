@@ -2,32 +2,32 @@ package Harshipack;
 
 import java.util.*;
 
-class InvalidAgeException extends Exception{
-	public InvalidAgeException(String message) {
+class HeavyWorkException extends Exception{
+	public HeavyWorkException(String message) {
 		super(message);
 	}
 }
 class CustomException{
-	
-	public void Validation() throws InvalidAgeException {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Age entha ?");
-		int age=sc.nextInt();
-		if(age>=18) {
-			System.out.print("go for vote");
-		}
-		else {
-			throw new InvalidAgeException("Pilla bacha pakkakellu");
+	int task=0;
+	public void Dowork() throws HeavyWorkException {
+		task++;
+		System.out.println("Task "+task+" Completed");
+		if(task>=3) {
+			throw new HeavyWorkException("Too Much Work!!!");
 		}
 	}
 	public static void main(String args[]) {
-		CustomException obj = new CustomException();
+		CustomException person = new CustomException();
 		try {
-			obj.Validation();
+			person.Dowork();
+			person.Dowork();
+			person.Dowork();
+			person.Dowork();
+			person.Dowork();
 			
 		}
-		catch(InvalidAgeException ie) {
-			System.out.println(ie.getMessage());
+		catch(HeavyWorkException he) {
+			System.out.println(he.getMessage());
 		}
 	}
 }

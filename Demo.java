@@ -10,17 +10,24 @@ public class Demo {
         double d = 3.141592653589793; 
         char ch = 'A';
         boolean bl = true;
-        String s = "Hello Java";
         
         System.out.println("This is Integer "+a);
         System.out.println("This is float "+f);
         System.out.println("This is double "+d);
         System.out.println("This is char "+ch);
         System.out.println("This is boolean "+bl);
-        System.out.println("This is string "+s);
         
 	}
-	
+	public void strmethod() {
+		
+		String s = "Hello ";
+		String s1 = "Java";
+		System.out.println("This is string "+s);
+		System.out.println("CharAt 3  "+s.charAt(3));
+		System.out.println("concatination "+ s.concat(s1));
+		
+		
+	}
 	public void arraysmethod() {
 		
 		int arr[] = {1,2,3,4,5};
@@ -39,6 +46,7 @@ public class Demo {
 		Demo obj = new Demo();
 		obj.datatypes();
 		obj.arraysmethod();
+		obj.strmethod();
 	}
 
 }
